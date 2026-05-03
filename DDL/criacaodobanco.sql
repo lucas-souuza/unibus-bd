@@ -1,0 +1,8 @@
+DROP SCHEMA IF EXISTS `unibus`;
+
+CREATE SCHEMA IF NOT EXISTS `unibus`
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+GRANT ALL PRIVILEGES ON unibus.* TO 'unibus_user'@'localhost';
+FLUSH PRIVILEGES;
