@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `ocorrencia` (
     `id_ocorrencia` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador único da ocorrência',
     `id_usuario` INT UNSIGNED NOT NULL COMMENT 'Usuário que registrou a ocorrência',
     `id_linha` INT UNSIGNED NOT NULL COMMENT 'Linha relacionada à ocorrência',
-    `tipo` ENUM('superlotacao', 'atraso', 'acidente', 'interrupcao') NOT NULL COMMENT 'Tipo da ocorrência - ENUM de acordo com RF05',
+    `tipo` ENUM('SUPERLOTACAO', 'ATRASO', 'ACIDENTE', 'INTERRUPCAO') NOT NULL COMMENT 'Tipo da ocorrência - ENUM de acordo com RF05',
     `descricao` VARCHAR(500) NULL COMMENT 'Descrição opcional da ocorrência',
     `criado_em` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Data e hora do registro - controle RN02 e RN10',
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `notificacao` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `rota` (
     `id_rota` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador único da rota',
-    `id_usuario` INT UNSIGNED NOT NULL COMMENT 'Usuário que criou ou referencia a rota',
+    `id_usuario` NOT NULL COMMENT 'Usuário que criou ou referencia a rota',
     `origem` VARCHAR(100) NOT NULL COMMENT 'Bairro/local de origem',
     `destino` VARCHAR(100) NOT NULL COMMENT 'Bairro/local de destino - sempre UNIRIO',
     `descricao` VARCHAR(500) NULL COMMENT 'Dicas e recomendações práticas da rota',
