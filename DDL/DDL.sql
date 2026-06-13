@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `notificacao` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `rota` (
     `id_rota` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador único da rota',
-    `id_usuario` NOT NULL COMMENT 'Usuário que criou ou referencia a rota',
+    `id_usuario` INT UNSIGNED NOT NULL COMMENT 'Usuário que criou ou referencia a rota',
     `origem` VARCHAR(100) NOT NULL COMMENT 'Bairro/local de origem',
     `destino` VARCHAR(100) NOT NULL COMMENT 'Bairro/local de destino - sempre UNIRIO',
     `descricao` VARCHAR(500) NULL COMMENT 'Dicas e recomendações práticas da rota',
